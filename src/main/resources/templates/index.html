@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Form</title>
+</head>
+<body>
+    <h1>Employee Form</h1>
+    <form action="http://localhost:8080" th:action="@{/save}" th:object="${employee}" method="post">
+        <label for="employeeName">Employee Name:</label>
+        <input type="text" id="employeeName" th:field="*{employeeName}"><br><br>
+        
+        <label for="dob">Date of Birth:</label>
+        <input type="text" id="dob" th:field="*{dob}" required><br><br>
+        
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="tel" id="phoneNumber" th:field="*{phoneNumber}"><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" th:field="*{email}"><br><br>
+        
+        <label for="employeeSystem">Employee System:</label>
+        <input type="text" id="employeeSystem" th:field="*{employeeSystem}"><br><br>
+        
+      
+        <h2>Employee Address</h2>
+        <label for="addressLine1">Address Line 1:</label>
+        <input type="text" id="addressLine1" th:field="*{employeeAddress.addressLine1}"><br><br>
+        
+        <label for="addressLine2">Address Line 2:</label>
+        <input type="text" id="addressLine2" th:field="*{employeeAddress.addressLine2}"><br><br>
+        
+        <label for="city">City:</label>
+        <input type="text" id="city" th:field="*{employeeAddress.city}"><br><br>
+        
+        <label for="state">State:</label>
+        <input type="text" id="state" th:field="*{employeeAddress.state}"><br><br>
+        
+        <label for="country">Country:</label>
+        <input type="text" id="country" th:field="*{employeeAddress.country}"><br><br>
+
+
+        <h2>Department</h2>
+        <label for="departmentName">Department Name:</label>
+        <input type="text" id="departmentName" th:field="*{department.departmentName}"><br><br>
+       
+       
+        <h2>Company</h2>
+        <label for="companyName">Company Name:</label>
+        <input type="text" id="companyName" th:field="*{department.company.companyName}"><br><br>
+        
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" th:field="*{department.company.startDate}"><br><br>
+        
+        <label for="gst">GST:</label>
+        <input type="number" id="gst" th:field="*{department.company.gst}"><br><br>
+        
+        <label for="companyPhoneNumber">Company Phone Number:</label>
+        <input type="tel" id="companyPhoneNumber" th:field="*{department.company.phoneNumber}"><br><br>
+        
+        <label for="companyShortCode">Company Short Code:</label>
+        <input type="text" id="companyShortCode" th:field="*{department.company.companyShortCode}"><br><br>
+        
+       <!--  <label for="companyAddress">Company Address:</label>
+        <input type="text" id="companyAddress" th:field="*{department.company.address}"><br><br>
+        
+         -->
+        
+        <h2>Company Address</h2>
+        <label for="addressLine1">Address Line 1:</label>
+        <input type="text" id="addressLine1" th:field="*{department.company.address.addressLine1}"><br><br>
+        
+        <label for="addressLine2">Address Line 2:</label>
+        <input type="text" id="addressLine2" th:field="*{department.company.address.addressLine2}"><br><br>
+        
+        <label for="city">City:</label>
+        <input type="text" id="city" th:field="*{department.company.address.city}"><br><br>
+        
+        <label for="state">State:</label>
+        <input type="text" id="state" th:field="*{department.company.address.state}"><br><br>
+        
+        <label for="country">Country:</label>
+        <input type="text" id="country" th:field="*{department.company.address.country}"><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
